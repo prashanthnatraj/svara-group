@@ -6,7 +6,7 @@ const Ecosystem: React.FC = () => {
     <section id="ecosystem" className="py-32 bg-svara-black">
       <div className="container mx-auto px-6 md:px-12">
         <div className="mb-24 text-center md:text-left">
-          <h2 className="font-serif text-5xl md:text-6xl text-svara-white mb-6">Our Brands</h2>
+          <h2 className="font-serif text-5xl md:text-6xl text-svara-white mb-6">Explore Portfolio</h2>
           <p className="font-sans text-svara-white/40 uppercase tracking-widest text-[10px]">Scalable Intelligence, Human Mastery</p>
         </div>
 
