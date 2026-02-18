@@ -1,8 +1,8 @@
-
 import React, { useState, useEffect } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Ecosystem from './components/Ecosystem';
+import About from './components/About';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import GeminiAdvisor from './components/GeminiAdvisor';
@@ -20,6 +20,7 @@ const App: React.FC = () => {
       <main>
         <Hero />
         <Ecosystem />
+        <About />
         <Contact />
       </main>
       <Footer />
