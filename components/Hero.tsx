@@ -4,43 +4,55 @@ const Hero: React.FC = () => {
   return (
     <section className="relative h-screen flex flex-col items-center justify-center text-center px-6 overflow-hidden">
       <div className="absolute inset-0 z-0">
-        <div className="absolute inset-0 bg-gradient-to-b from-svara-black/40 via-svara-black/70 to-svara-black z-10"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-svara-black/60 via-svara-black/80 to-svara-black z-10"></div>
         <img 
           src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&q=80&w=2000" 
-          alt="High-end Workspace" 
-          className="w-full h-full object-cover scale-110 animate-[pulse_25s_infinite]"
+          alt="Founder Excellence" 
+          className="w-full h-full object-cover grayscale brightness-50 scale-105"
         />
       </div>
 
-      <div className="relative z-20 max-w-4xl fade-in">
-        <h1 className="font-serif text-7xl md:text-9xl mb-4 tracking-tight text-svara-white">
-          Svara.
+      <div className="relative z-20 max-w-5xl fade-in">
+        <h1 className="font-serif text-6xl md:text-9xl mb-6 tracking-tight text-svara-white">
+          Empowering Founders.
         </h1>
-        <p className="font-sans text-[10px] md:text-xs uppercase tracking-[0.6em] text-svara-gold mb-8 opacity-80">
-          The Resonance of Modern Growth
+        <p className="font-sans text-[10px] md:text-xs uppercase tracking-[0.5em] text-svara-gold mb-10 opacity-90">
+          Scaling Excellence via Intelligence & Craft
         </p>
-        <div className="h-[1px] w-12 bg-svara-gold/40 mx-auto mb-8"></div>
-        <p className="font-sans font-light text-lg md:text-xl text-svara-white/70 max-w-2xl mx-auto leading-relaxed mb-12">
-          Harmonizing high-scale automation with high-touch strategic mastery. Built for the modern entrepreneur who demands excellence at every layer of their vision.
-        </p>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 text-left max-w-4xl mx-auto mb-16">
+          <div className="space-y-4 border-l border-svara-gold/20 pl-8">
+            <h3 className="font-serif text-2xl text-svara-white italic">For the Visionary</h3>
+            <p className="font-sans font-light text-sm text-svara-white/60 leading-relaxed">
+              Reclaim your time through the high-scale automation of BrandPilot and the operational mastery of FreNYC. We handle the mechanics so you can focus on the vision.
+            </p>
+          </div>
+          <div className="space-y-4 border-l border-svara-gold/20 pl-8">
+            <h3 className="font-serif text-2xl text-svara-white italic">For the Investor</h3>
+            <p className="font-sans font-light text-sm text-svara-white/60 leading-relaxed">
+              We are a boutique holding company selectively acquiring and scaling high-potential startups. We provide the capital and AI infrastructure to turn founders into category leaders.
+            </p>
+          </div>
+        </div>
+
         <div className="flex flex-col md:flex-row items-center justify-center gap-6">
           <a 
             href="#contact" 
-            className="px-10 py-4 bg-svara-gold text-svara-black uppercase tracking-[0.2em] text-[10px] font-bold hover:bg-svara-white transition-all duration-500"
+            className="px-10 py-5 bg-svara-gold text-svara-black uppercase tracking-[0.2em] text-[10px] font-bold hover:bg-svara-white transition-all duration-500 shadow-2xl shadow-svara-gold/10"
           >
-            Start a Partnership
+            Scale My Business
           </a>
           <a 
-            href="#ecosystem" 
-            className="px-10 py-4 border border-svara-white/10 text-svara-white/60 uppercase tracking-[0.2em] text-[10px] hover:text-svara-gold hover:border-svara-gold transition-all duration-300"
+            href="#contact" 
+            className="px-10 py-5 border border-svara-white/20 text-svara-white uppercase tracking-[0.2em] text-[10px] hover:text-svara-gold hover:border-svara-gold transition-all duration-300"
           >
-            Our Portfolio
+            Investor Inbound
           </a>
         </div>
       </div>
 
-      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center opacity-40 animate-bounce">
-        <div className="w-[1px] h-12 bg-svara-gold/50"></div>
+      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center opacity-30 animate-pulse">
+        <div className="w-[1px] h-16 bg-gradient-to-b from-svara-gold to-transparent"></div>
       </div>
     </section>
   );
