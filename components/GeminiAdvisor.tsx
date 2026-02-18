@@ -25,7 +25,12 @@ const GeminiAdvisor: React.FC = () => {
     setIsLoading(true);
 
     try {
-      const ai = new GoogleGenAI({ apiKey: process.env.API_KEY || '' });
+      const apiKey = process.env.API_KEY;
+      if (!apiKey) {
+        throw new Error("Advisor configuration missing. Please verify API_KEY.");
+      }
+
+      const ai = new GoogleGenAI({ apiKey });
       const response = await ai.models.generateContent({
         model: 'gemini-3-flash-preview',
         contents: userMsg,
@@ -52,7 +57,7 @@ const GeminiAdvisor: React.FC = () => {
       setMessages(prev => [...prev, { role: 'assistant', content: aiContent }]);
     } catch (error) {
       console.error("Advisor Error:", error);
-      setMessages(prev => [...prev, { role: 'assistant', content: "Strategic systems are currently high-load. Please reach out to our advisory team directly via the contact form." }]);
+      setMessages(prev => [...prev, { role: 'assistant', content: "Our strategic advisors are currently in a high-level briefing. Please utilize our primary contact form for immediate counsel." }]);
     } finally {
       setIsLoading(false);
     }
@@ -62,6 +67,7 @@ const GeminiAdvisor: React.FC = () => {
     <div className="fixed bottom-8 right-8 z-[60]">
       <button 
         onClick={() => setIsOpen(!isOpen)}
+        aria-label="Toggle AI Counsel"
         className={`w-16 h-16 rounded-full bg-svara-black border border-svara-gold shadow-2xl flex items-center justify-center transition-all duration-500 hover:scale-110 active:scale-95 ${isOpen ? 'rotate-90' : 'rotate-0'}`}
       >
         {isOpen ? (
@@ -77,7 +83,7 @@ const GeminiAdvisor: React.FC = () => {
         )}
       </button>
 
-      <div className={`absolute bottom-20 right-0 w-[350px] md:w-[400px] bg-svara-black border border-svara-gold/30 shadow-2xl transition-all duration-500 origin-bottom-right ${isOpen ? 'opacity-100 scale-100 translate-y-0' : 'opacity-0 scale-90 translate-y-10 pointer-events-none'}`}>
+      <div className={`absolute bottom-24 right-0 w-[350px] md:w-[400px] bg-svara-black border border-svara-gold/30 shadow-2xl transition-all duration-500 origin-bottom-right ${isOpen ? 'opacity-100 scale-100 translate-y-0' : 'opacity-0 scale-90 translate-y-10 pointer-events-none'}`}>
         <div className="p-6 border-b border-svara-gold/20 flex items-center gap-4 bg-svara-gray/50">
           <div className="w-8 h-8 rounded-full border border-svara-gold flex items-center justify-center">
             <div className="w-4 h-4 bg-svara-gold rounded-full animate-pulse"></div>
@@ -97,13 +103,13 @@ const GeminiAdvisor: React.FC = () => {
               <p className="font-serif italic text-svara-white/40">"Scale is achieved through the elimination of friction."</p>
               <div className="flex flex-col gap-2">
                 <button 
-                  onClick={() => setInput("How does BrandPilot save me $3,000+ a month?")}
+                  onClick={() => { setInput("How does BrandPilot save me $3,000+ a month?"); }}
                   className="text-[10px] uppercase tracking-widest text-svara-gold/60 border border-svara-gold/20 px-4 py-2 hover:bg-svara-gold/5 transition-colors"
                 >
                   Marketing Efficiency
                 </button>
                 <button 
-                  onClick={() => setInput("Tell me about fractional AI advisory.")}
+                  onClick={() => { setInput("Tell me about fractional AI advisory."); }}
                   className="text-[10px] uppercase tracking-widest text-svara-gold/60 border border-svara-gold/20 px-4 py-2 hover:bg-svara-gold/5 transition-colors"
                 >
                   Fractional Counsel
