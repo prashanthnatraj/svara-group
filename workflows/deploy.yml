@@ -1,9 +1,9 @@
-
 name: Svara website build and deploy
 
 on:
   push:
-    branches: [main]
+    branches: [main, master] # Trigger on either main or master to be safe
+  workflow_dispatch: # Allows you to manually trigger it from the Actions tab
 
 permissions:
   contents: read
@@ -22,7 +22,6 @@ jobs:
       - run: npm install
       - run: npm run build
         env:
-          # This line connects your GitHub Secret to the Vite build process
           API_KEY: ${{ secrets.API_KEY }}
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
