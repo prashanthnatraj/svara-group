@@ -2,8 +2,8 @@ name: Svara website build and deploy
 
 on:
   push:
-    branches: [main, master] # Trigger on either main or master to be safe
-  workflow_dispatch: # Allows you to manually trigger it from the Actions tab
+    branches: [main, master]
+  workflow_dispatch:
 
 permissions:
   contents: read
