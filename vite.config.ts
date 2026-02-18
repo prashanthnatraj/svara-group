@@ -1,11 +1,11 @@
-
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
 export default defineConfig({
   plugins: [react()],
+  // If your site is at svara-group.com (root domain), base should be '/'
+  base: '/', 
   define: {
-    // This 'bakes' the API key into your site at build time
     'process.env.API_KEY': JSON.stringify(process.env.API_KEY),
   },
   build: {
