@@ -21,6 +21,9 @@ jobs:
           cache: 'npm'
       - run: npm install
       - run: npm run build
+        env:
+          # This line connects your GitHub Secret to the Vite build process
+          API_KEY: ${{ secrets.API_KEY }}
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
