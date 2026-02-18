@@ -1,0 +1,9 @@
+
+{
+  "name": "Svara Group | Empowering Founders",
+  "description": "A high-end holding company dedicated to the modern entrepreneur, bridging AI-driven growth with bespoke founder-to-founder advisory.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}
