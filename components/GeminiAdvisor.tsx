@@ -27,8 +27,8 @@ const GeminiAdvisor: React.FC = () => {
     setMessages(prev => [...prev, { role: 'assistant', content: '' }]);
 
     try {
-      const apiKey = process.env.API_KEY;
-      const ai = new GoogleGenAI({ apiKey: apiKey || '' });
+      // Always use the required initialization pattern for GoogleGenAI
+      const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
       
       const chat = ai.chats.create({
         model: 'gemini-3-flash-preview',
@@ -48,6 +48,7 @@ const GeminiAdvisor: React.FC = () => {
       let fullText = '';
       
       for await (const chunk of result) {
+        // Access .text property directly from response chunk
         const text = chunk.text;
         fullText += text;
         setMessages(prev => {
