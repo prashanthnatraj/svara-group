@@ -14,9 +14,23 @@ const App: React.FC = () => {
 
   useEffect(() => {
     setIsLoaded(true);
-    const path = window.location.pathname;
-    if (path.includes('brandpilot-ai')) {
-      setCurrentPage('brandpilot');
+    
+    // Check for a redirect parameter from 404.html
+    const params = new URLSearchParams(window.location.search);
+    const redirectPath = params.get('p');
+    
+    if (redirectPath) {
+      // Clean up the URL and navigate to the intended path
+      window.history.replaceState(null, '', redirectPath);
+      if (redirectPath.includes('brandpilot-ai')) {
+        setCurrentPage('brandpilot');
+      }
+    } else {
+      // Standard path detection
+      const path = window.location.pathname;
+      if (path.includes('brandpilot-ai')) {
+        setCurrentPage('brandpilot');
+      }
     }
     
     const handlePopState = () => {
