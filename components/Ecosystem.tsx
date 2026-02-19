@@ -11,7 +11,7 @@ const Ecosystem: React.FC<EcosystemProps> = ({ onNavigate }) => {
       <div className="container mx-auto px-6 md:px-12">
         <div className="mb-24 text-center md:text-left">
           <h2 className="font-serif text-5xl md:text-6xl text-svara-white mb-6">Our Brands</h2>
-          <p className="font-sans text-svara-white/40 uppercase tracking-widest text-[10px]">AI-First Velocity. Human-Led Craft.</p>
+          <p className="font-sans text-svara-white/40 uppercase tracking-widest text-[10px]">Scalable Intelligence, Human Mastery.</p>
         </div>
 
         <div className="space-y-32 md:space-y-64">
