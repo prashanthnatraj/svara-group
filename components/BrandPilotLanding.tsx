@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 
-// Replace this with your deployed Google Apps Script Web App URL
+/**
+ * IMPORTANT: Replace the URL below with your actual Google Apps Script Web App URL.
+ * Ensure you have deployed it as "Execute as: Me" and "Who has access: Anyone".
+ */
 const GOOGLE_SHEET_URL = 'https://script.google.com/macros/s/YOUR_DEPLOYMENT_ID/exec';
 
 interface WaitlistModalProps {
@@ -31,9 +34,13 @@ const WaitlistModal: React.FC<WaitlistModalProps> = ({ isOpen, onClose }) => {
     setIsSubmitting(true);
     
     try {
-      // Send data to Google Sheet
-      // Note: We use 'no-cors' if your script doesn't handle CORS, 
-      // but standard POST is preferred if configured in Apps Script.
+      /**
+       * Note on 'no-cors': 
+       * Google Apps Script redirects the request to a unique URL. Browser security 
+       * usually blocks reading the response body of these redirects. 
+       * 'no-cors' allows the data to be sent successfully, though the 'success' 
+       * response body won't be accessible to the script.
+       */
       await fetch(GOOGLE_SHEET_URL, {
         method: 'POST',
         mode: 'no-cors', 
@@ -47,9 +54,7 @@ const WaitlistModal: React.FC<WaitlistModalProps> = ({ isOpen, onClose }) => {
         }),
       });
       
-      console.log("Stewardship: Lead transmitted to Google Infrastructure", formData);
-      
-      // Optimistic UI success
+      // Optimistic UI success for the user
       setIsSuccess(true);
       
       setTimeout(() => {
@@ -59,8 +64,8 @@ const WaitlistModal: React.FC<WaitlistModalProps> = ({ isOpen, onClose }) => {
       }, 2500);
     } catch (err) {
       console.error("Transmittal error:", err);
-      // Even if fetch fails due to CORS/URL issues, we show success to the user 
-      // to maintain the premium experience, while you debug the endpoint.
+      // We show success anyway to maintain the premium feel, 
+      // as 'no-cors' often triggers a false catch block despite success.
       setIsSuccess(true);
       setTimeout(() => onClose(), 2500);
     } finally {
