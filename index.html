@@ -18,7 +18,7 @@
     
     <!-- Tailwind & Fonts -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <script>
       tailwind.config = {
         theme: {
@@ -33,6 +33,17 @@
               serif: ['Cormorant Garamond', 'serif'],
               sans: ['Inter', 'sans-serif'],
             },
+            animation: {
+              'scroll-line': 'scrollLine 2s infinite',
+              'slow-ping': 'ping 3s cubic-bezier(0, 0, 0.2, 1) infinite',
+            },
+            keyframes: {
+              scrollLine: {
+                '0%': { transform: 'translateY(-100%)', opacity: '0' },
+                '50%': { transform: 'translateY(0)', opacity: '1' },
+                '100%': { transform: 'translateY(100%)', opacity: '0' },
+              }
+            }
           }
         }
       }
