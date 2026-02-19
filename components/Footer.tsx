@@ -1,18 +1,22 @@
 import React from 'react';
 import { LogoMark } from './Navbar';
 
-const Footer: React.FC = () => {
+interface FooterProps {
+  onNavigate: (page: 'home' | 'brandpilot') => void;
+}
+
+const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
   return (
     <footer className="bg-svara-black py-24 px-6 border-t border-svara-gold/5">
       <div className="container mx-auto">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-16 mb-20">
           <div className="space-y-6">
-            <div className="flex items-center gap-4 group">
-              <LogoMark className="w-10 h-10" />
+            <button onClick={() => onNavigate('home')} className="flex items-center gap-4 group text-left">
+              <LogoMark className="w-12 h-12" />
               <h2 className="font-serif text-3xl text-svara-white tracking-[0.2em] uppercase">SVARA.</h2>
-            </div>
+            </button>
             <p className="text-[10px] uppercase tracking-[0.3em] text-svara-white/30 max-w-xs leading-loose">
-              Bridging high-scale automation with high-touch operational mastery.
+              Empowering founders through AI-first velocity and precision craft.
             </p>
           </div>
 
@@ -20,16 +24,16 @@ const Footer: React.FC = () => {
             <div className="space-y-4">
               <h4 className="text-[10px] uppercase tracking-widest text-svara-gold font-bold">Inquiries</h4>
               <nav className="flex flex-col gap-3 text-[10px] uppercase tracking-widest text-svara-white/40">
-                <a href="#contact" className="hover:text-svara-gold transition-colors">Start Partnership</a>
-                <a href="#contact" className="hover:text-svara-gold transition-colors">Pitch Startup</a>
+                <a href="#contact" className="hover:text-svara-gold transition-colors">Scale My Business</a>
+                <a href="#contact" className="hover:text-svara-gold transition-colors">Invest With Us</a>
               </nav>
             </div>
             <div className="space-y-4">
-              <h4 className="text-[10px] uppercase tracking-widest text-svara-gold font-bold">The Group</h4>
-              <nav className="flex flex-col gap-3 text-[10px] uppercase tracking-widest text-svara-white/40">
-                <a href="#ecosystem" className="hover:text-svara-gold transition-colors">BrandPilot</a>
-                <a href="#ecosystem" className="hover:text-svara-gold transition-colors">FreNYC</a>
-                <a href="#ecosystem" className="hover:text-svara-gold transition-colors">FOMO Bakery</a>
+              <h4 className="text-[10px] uppercase tracking-widest text-svara-gold font-bold">Our Brands</h4>
+              <nav className="flex flex-col gap-3 text-[10px] uppercase tracking-widest text-svara-white/40 text-left">
+                <button onClick={() => onNavigate('brandpilot')} className="hover:text-svara-gold transition-colors uppercase text-left">BrandPilot.ai</button>
+                <a href="https://www.frenyc.com/" className="hover:text-svara-gold transition-colors">FreNYC.com</a>
+                <a href="https://fomobakery.com/" className="hover:text-svara-gold transition-colors">FOMO Bakery</a>
               </nav>
             </div>
             <div className="space-y-4 col-span-2 md:col-span-1">
