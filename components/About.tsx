@@ -18,6 +18,11 @@ const About: React.FC = () => {
                 Our portfolio is intentionally curated. We don't chase volume; we chase excellence. From the digital-first efficiency of BrandPilot to the high-touch nuance of FreNYC, we provide the capital, infrastructure, and operational wisdom required to turn high-potential brands into category leaders.
               </p>
             </div>
+            <div className="pt-4">
+              <a href="#contact" className="px-12 py-5 border border-svara-gold text-svara-gold uppercase tracking-[0.4em] text-[11px] font-black hover:bg-svara-gold hover:text-svara-black transition-all duration-500">
+                Inquire for advisory
+              </a>
+            </div>
           </div>
           <div className="relative order-1 md:order-2">
             <div className="aspect-[4/5] overflow-hidden border border-svara-gold/20">
