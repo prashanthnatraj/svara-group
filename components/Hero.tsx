@@ -16,21 +16,21 @@ const Hero: React.FC = () => {
         <h1 className="font-serif text-6xl md:text-9xl mb-6 tracking-tight text-svara-white">
           Empowering Founders.
         </h1>
-        <p className="font-sans text-[10px] md:text-xs uppercase tracking-[0.5em] text-svara-gold mb-10 opacity-90">
-          Scaling Excellence via Intelligence & Craft
+        <p className="font-sans text-[10px] md:text-xs uppercase tracking-[0.5em] text-svara-gold mb-10 opacity-90 font-bold">
+          AI-First Velocity. Human-Led Craft.
         </p>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 text-left max-w-4xl mx-auto mb-16">
           <div className="space-y-4 border-l border-svara-gold/20 pl-8">
             <h3 className="font-serif text-2xl text-svara-white italic">For the Visionary</h3>
             <p className="font-sans font-light text-sm text-svara-white/60 leading-relaxed">
-              Reclaim your time through the high-scale automation of BrandPilot and the operational mastery of FreNYC. We handle the mechanics so you can focus on the vision.
+              We provide the framework for success: From early stage growth to Product-Market Fit to backoffice support (finance, marketing) to fundraising. Your growth, architected.
             </p>
           </div>
           <div className="space-y-4 border-l border-svara-gold/20 pl-8">
             <h3 className="font-serif text-2xl text-svara-white italic">For the Investor</h3>
             <p className="font-sans font-light text-sm text-svara-white/60 leading-relaxed">
-              We are a boutique holding company selectively acquiring and scaling high-potential startups. We provide the capital and AI infrastructure to turn founders into category leaders.
+              We are actively deploying capital into the next generation of AI-first startups. Join us in investing for growth where high-scale automation meets high-potential founders.
             </p>
           </div>
         </div>
@@ -46,7 +46,7 @@ const Hero: React.FC = () => {
             href="#contact" 
             className="px-10 py-5 border border-svara-white/20 text-svara-white uppercase tracking-[0.2em] text-[10px] hover:text-svara-gold hover:border-svara-gold transition-all duration-300"
           >
-            Investor Inbound
+            Invest With Us
           </a>
         </div>
       </div>
