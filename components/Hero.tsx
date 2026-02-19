@@ -16,30 +16,44 @@ const Hero: React.FC = () => {
         <h1 className="font-serif text-6xl md:text-9xl mb-6 tracking-tight text-svara-white">
           Empowering Founders.
         </h1>
-        <p className="font-sans text-[10px] md:text-xs uppercase tracking-[0.5em] text-svara-gold mb-10 opacity-90 font-bold">
+        <p className="font-sans text-[10px] md:text-xs uppercase tracking-[0.5em] text-svara-gold mb-12 opacity-90 font-bold">
           AI-First Velocity. Human-Led Craft.
         </p>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 text-left max-w-4xl mx-auto mb-16">
           <div className="space-y-4 border-l border-svara-gold/20 pl-8">
-             <h3 className="font-serif text-2xl text-svara-white">Strategic Capital</h3>
-             <p className="text-xs text-svara-white/40 leading-relaxed">
-               We provide more than funding; we provide the operational resonance required to scale with precision.
+             <h3 className="font-serif text-2xl text-svara-white italic">For the Visionary</h3>
+             <p className="font-sans font-light text-sm text-svara-white/60 leading-relaxed">
+               We provide the framework for success: From early stage growth to Product-Market Fit to backoffice support (finance, marketing) to fundraising. Your growth, architected.
              </p>
           </div>
           <div className="space-y-4 border-l border-svara-gold/20 pl-8">
-             <h3 className="font-serif text-2xl text-svara-white">Operational Excellence</h3>
-             <p className="text-xs text-svara-white/40 leading-relaxed">
-               Leveraging proprietary AI workflows to eliminate friction and maximize founder output.
+             <h3 className="font-serif text-2xl text-svara-white italic">For the Investor</h3>
+             <p className="font-sans font-light text-sm text-svara-white/60 leading-relaxed">
+               We are actively deploying capital into the next generation of AI-first startups. Join us in investing for growth where high-scale automation meets high-potential founders.
              </p>
           </div>
         </div>
         
-        <div className="flex justify-center mt-8">
-          <a href="#ecosystem" className="text-svara-gold text-[10px] uppercase tracking-[0.5em] border-b border-svara-gold/30 pb-2 hover:border-svara-gold transition-all">
-            Explore Ecosystem
+        <div className="flex flex-col md:flex-row items-center justify-center gap-6 mt-4">
+          <a 
+            href="#contact" 
+            className="px-10 py-5 bg-svara-gold text-svara-black uppercase tracking-[0.2em] text-[10px] font-bold hover:bg-svara-white transition-all duration-500 shadow-2xl shadow-svara-gold/10"
+          >
+            Scale My Business
+          </a>
+          <a 
+            href="#contact" 
+            className="px-10 py-5 border border-svara-white/20 text-svara-white uppercase tracking-[0.2em] text-[10px] hover:text-svara-gold hover:border-svara-gold transition-all duration-300"
+          >
+            Invest With Us
           </a>
         </div>
+      </div>
+
+      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center opacity-30 group cursor-pointer hover:opacity-100 transition-opacity">
+        <span className="text-[8px] uppercase tracking-[0.5em] text-svara-gold mb-2">Scroll</span>
+        <div className="w-[1px] h-16 bg-gradient-to-b from-svara-gold to-transparent"></div>
       </div>
     </section>
   );
