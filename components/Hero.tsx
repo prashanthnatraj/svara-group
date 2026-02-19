@@ -16,7 +16,7 @@ const Hero: React.FC = () => {
         <h1 className="font-serif text-6xl md:text-9xl mb-6 tracking-tight text-svara-white">
           Empowering Founders.
         </h1>
-        <p className="font-sans text-[10px] md:text-xs uppercase tracking-[0.5em] text-svara-gold mb-12 opacity-90 font-bold">
+        <p className="font-sans text-[10px] md:text-xs uppercase tracking-[0.5em] text-svara-gold mb-12 opacity-90 font-extrabold">
           AI-First Velocity. Human-Led Craft.
         </p>
         
@@ -38,23 +38,25 @@ const Hero: React.FC = () => {
         <div className="flex flex-col md:flex-row items-center justify-center gap-6 mt-4">
           <a 
             href="#contact" 
-            className="px-10 py-5 bg-svara-gold text-svara-black uppercase tracking-[0.2em] text-[10px] font-bold hover:bg-svara-white transition-all duration-500 shadow-2xl shadow-svara-gold/10"
+            className="px-10 py-5 bg-svara-gold text-svara-black uppercase tracking-[0.3em] text-[11px] font-extrabold hover:bg-svara-white transition-all duration-500 shadow-2xl shadow-svara-gold/10"
           >
             Scale My Business
           </a>
           <a 
             href="#contact" 
-            className="px-10 py-5 border border-svara-white/20 text-svara-white uppercase tracking-[0.2em] text-[10px] hover:text-svara-gold hover:border-svara-gold transition-all duration-300"
+            className="px-10 py-5 border border-svara-white/30 text-svara-white uppercase tracking-[0.3em] text-[11px] font-extrabold hover:text-svara-gold hover:border-svara-gold transition-all duration-300"
           >
             Invest With Us
           </a>
         </div>
       </div>
 
-      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center opacity-30 group cursor-pointer hover:opacity-100 transition-opacity">
-        <span className="text-[8px] uppercase tracking-[0.5em] text-svara-gold mb-2">Scroll</span>
-        <div className="w-[1px] h-16 bg-gradient-to-b from-svara-gold to-transparent"></div>
-      </div>
+      <a href="#ecosystem" className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center opacity-80 group cursor-pointer hover:opacity-100 transition-opacity">
+        <span className="text-[9px] uppercase tracking-[0.6em] text-svara-gold mb-4 font-bold">Scroll</span>
+        <div className="w-[1px] h-20 bg-svara-white/10 relative overflow-hidden">
+          <div className="absolute inset-0 bg-svara-gold animate-scroll-line"></div>
+        </div>
+      </a>
     </section>
   );
 };
