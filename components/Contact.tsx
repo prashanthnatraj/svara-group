@@ -14,7 +14,7 @@ const Contact: React.FC = () => {
         <div className="max-w-xl mx-auto">
           <form className="space-y-12 text-left" onSubmit={(e) => e.preventDefault()}>
             <div className="space-y-1">
-              <label className="text-[10px] uppercase tracking-widest text-svara-gold/60 ml-1">Your Identity</label>
+              <label className="text-[10px] uppercase tracking-widest text-svara-gold/60 ml-1 font-bold">Your Identity</label>
               <input 
                 type="text" 
                 placeholder="Ex. Julian Vane"
@@ -22,7 +22,7 @@ const Contact: React.FC = () => {
               />
             </div>
             <div className="space-y-1">
-              <label className="text-[10px] uppercase tracking-widest text-svara-gold/60 ml-1">Business Milestone</label>
+              <label className="text-[10px] uppercase tracking-widest text-svara-gold/60 ml-1 font-bold">Business Milestone</label>
               <select className="w-full bg-transparent border-b border-svara-gold/20 py-4 px-1 focus:outline-none focus:border-svara-gold transition-colors font-sans text-svara-white">
                 <option className="bg-svara-black" value="early">Ideation / Seed</option>
                 <option className="bg-svara-black" value="growth">Early Growth</option>
@@ -30,7 +30,7 @@ const Contact: React.FC = () => {
               </select>
             </div>
             <div className="space-y-1">
-              <label className="text-[10px] uppercase tracking-widest text-svara-gold/60 ml-1">The Challenge</label>
+              <label className="text-[10px] uppercase tracking-widest text-svara-gold/60 ml-1 font-bold">The Challenge</label>
               <textarea 
                 rows={4}
                 placeholder="What friction can we help you eliminate?"
@@ -40,7 +40,7 @@ const Contact: React.FC = () => {
             <div className="pt-8 flex justify-center">
               <button 
                 type="submit" 
-                className="w-full px-24 py-5 bg-svara-gold text-svara-black uppercase tracking-[0.3em] text-[10px] font-bold hover:bg-svara-white transition-all duration-500 shadow-xl shadow-svara-gold/5"
+                className="w-full px-24 py-6 bg-svara-gold text-svara-black uppercase tracking-[0.4em] text-[11px] font-black hover:bg-svara-white transition-all duration-500 shadow-xl shadow-svara-gold/10"
               >
                 Inquire for Partnership
               </button>
