@@ -1,8 +1,11 @@
-
 import React from 'react';
 import { BrandFeatureProps } from '../types';
 
-const BrandFeature: React.FC<BrandFeatureProps> = ({ 
+interface ExtendedBrandFeatureProps extends BrandFeatureProps {
+  onCtaClick?: () => void;
+}
+
+const BrandFeature: React.FC<ExtendedBrandFeatureProps> = ({ 
   title, 
   subtitle, 
   description, 
@@ -10,8 +13,16 @@ const BrandFeature: React.FC<BrandFeatureProps> = ({
   ctaText, 
   ctaLink, 
   imageUrl, 
-  reverse 
+  reverse,
+  onCtaClick
 }) => {
+  const handleClick = (e: React.MouseEvent) => {
+    if (onCtaClick) {
+      e.preventDefault();
+      onCtaClick();
+    }
+  };
+
   return (
     <div className={`flex flex-col ${reverse ? 'md:flex-row-reverse' : 'md:flex-row'} items-center gap-12 md:gap-24`}>
       {/* Image Container */}
@@ -44,6 +55,7 @@ const BrandFeature: React.FC<BrandFeatureProps> = ({
         <div className="pt-6">
           <a 
             href={ctaLink} 
+            onClick={handleClick}
             className="inline-block py-4 pr-12 border-b border-svara-gold/30 text-svara-gold uppercase tracking-widest text-xs hover:border-svara-gold transition-all duration-300 group"
           >
             {ctaText} 
