@@ -23,17 +23,15 @@ const GeminiAdvisor: React.FC = () => {
     setMessages(prev => [...prev, { role: 'user', content: userMsg }]);
     setIsLoading(true);
 
-    // Initial AI placeholder for streaming effect
     setMessages(prev => [...prev, { role: 'assistant', content: '' }]);
 
     try {
-      // Always use the required initialization pattern for GoogleGenAI
       const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
       
       const chat = ai.chats.create({
         model: 'gemini-3-flash-preview',
         config: {
-          systemInstruction: `You are the Svara Group Strategic Advisor. Persona: High-end growth ally, ROI-focused, brief, and strategic.
+          systemInstruction: `You are the Svara Group Strategic Advisor (Svara AI). Persona: High-end growth ally, ROI-focused, brief, and strategic.
           
           Brands:
           1. BrandPilot.ai: Marketing AI agent. Reclaims founder time. Agency quality for $50/month. 
@@ -48,7 +46,6 @@ const GeminiAdvisor: React.FC = () => {
       let fullText = '';
       
       for await (const chunk of result) {
-        // Access .text property directly from response chunk
         const text = chunk.text;
         fullText += text;
         setMessages(prev => {
@@ -74,14 +71,15 @@ const GeminiAdvisor: React.FC = () => {
       {/* Prominent Chat Pill */}
       <button 
         onClick={() => setIsOpen(!isOpen)}
-        className={`group flex items-center gap-4 bg-svara-black border border-svara-gold/50 pl-6 pr-4 py-3 rounded-full shadow-[0_0_30px_rgba(197,160,89,0.15)] transition-all duration-500 hover:scale-105 active:scale-95 ${isOpen ? 'opacity-0 scale-90 pointer-events-none' : 'opacity-100 scale-100'}`}
+        className={`group flex items-center gap-4 bg-svara-black border border-svara-gold/60 pl-6 pr-4 py-3 rounded-full shadow-[0_0_40px_rgba(197,160,89,0.3)] transition-all duration-500 hover:scale-105 active:scale-95 ${isOpen ? 'opacity-0 scale-90 pointer-events-none' : 'opacity-100 scale-100'}`}
       >
-        <span className="text-[10px] uppercase tracking-[0.3em] text-svara-gold font-bold">Ask AI Advisor</span>
-        <div className="w-10 h-10 rounded-full bg-svara-gold flex items-center justify-center relative overflow-hidden">
+        <span className="text-[10px] uppercase tracking-[0.4em] text-svara-gold font-extrabold">Ask Svara AI</span>
+        <div className="w-10 h-10 rounded-full bg-svara-gold flex items-center justify-center relative">
           <svg className="w-5 h-5 text-svara-black relative z-10" fill="currentColor" viewBox="0 0 24 24">
             <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/>
           </svg>
-          <div className="absolute inset-0 bg-white/20 animate-ping"></div>
+          {/* Brighter, slower pulse animation */}
+          <div className="absolute inset-0 bg-white/40 rounded-full animate-slow-ping"></div>
         </div>
       </button>
 
@@ -91,7 +89,7 @@ const GeminiAdvisor: React.FC = () => {
           <div className="flex items-center gap-4">
             <div className="w-3 h-3 bg-svara-gold rounded-full animate-pulse"></div>
             <div>
-              <h4 className="font-serif text-lg text-svara-gold">Growth Advisor</h4>
+              <h4 className="font-serif text-lg text-svara-gold">Svara AI Advisor</h4>
               <p className="text-[9px] uppercase tracking-widest text-svara-white/40 italic">Resonating Excellence</p>
             </div>
           </div>
@@ -107,13 +105,13 @@ const GeminiAdvisor: React.FC = () => {
               <div className="flex flex-col gap-3 px-8">
                 <button 
                   onClick={() => { setInput("How can BrandPilot optimize my growth?"); }}
-                  className="text-[9px] uppercase tracking-[0.2em] text-svara-gold/80 border border-svara-gold/10 px-4 py-3 hover:bg-svara-gold/5 transition-all text-left"
+                  className="text-[9px] uppercase tracking-[0.2em] text-svara-gold/80 border border-svara-gold/10 px-4 py-3 hover:bg-svara-gold/5 transition-all text-left font-bold"
                 >
                   01. Marketing Efficiency
                 </button>
                 <button 
                   onClick={() => { setInput("Tell me about fractional AI partnership."); }}
-                  className="text-[9px] uppercase tracking-[0.2em] text-svara-gold/80 border border-svara-gold/10 px-4 py-3 hover:bg-svara-gold/5 transition-all text-left"
+                  className="text-[9px] uppercase tracking-[0.2em] text-svara-gold/80 border border-svara-gold/10 px-4 py-3 hover:bg-svara-gold/5 transition-all text-left font-bold"
                 >
                   02. Strategic Support
                 </button>
@@ -122,7 +120,7 @@ const GeminiAdvisor: React.FC = () => {
           )}
           {messages.map((m, i) => (
             <div key={i} className={`flex ${m.role === 'user' ? 'justify-end' : 'justify-start'}`}>
-              <div className={`max-w-[85%] p-4 text-sm font-sans leading-relaxed ${m.role === 'user' ? 'bg-svara-gold/10 text-svara-gold border border-svara-gold/20' : 'text-svara-white/80 border-l-2 border-svara-gold/40 pl-5 bg-white/5'}`}>
+              <div className={`max-w-[85%] p-4 text-sm font-sans leading-relaxed ${m.role === 'user' ? 'bg-svara-gold/10 text-svara-gold border border-svara-gold/20 font-medium' : 'text-svara-white/80 border-l-2 border-svara-gold/40 pl-5 bg-white/5'}`}>
                 {m.content || (isLoading && i === messages.length - 1 ? <span className="inline-block w-1 h-4 bg-svara-gold animate-pulse"></span> : null)}
               </div>
             </div>
