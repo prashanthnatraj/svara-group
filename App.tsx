@@ -43,11 +43,22 @@ const App: React.FC = () => {
     return () => window.removeEventListener('popstate', handlePopState);
   }, []);
 
-  const navigateTo = (page: 'home' | 'brandpilot') => {
+  const navigateTo = (page: 'home' | 'brandpilot', section?: string) => {
     const url = page === 'home' ? '/' : '/brandpilot-ai/';
     window.history.pushState({}, '', url);
     setCurrentPage(page);
-    window.scrollTo(0, 0);
+    
+    if (section) {
+      // Use a small timeout to ensure the DOM has rendered if we just switched back to home
+      setTimeout(() => {
+        const el = document.getElementById(section);
+        if (el) {
+          el.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 50);
+    } else {
+      window.scrollTo(0, 0);
+    }
   };
 
   return (
