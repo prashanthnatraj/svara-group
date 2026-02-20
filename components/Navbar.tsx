@@ -24,7 +24,7 @@ export const LogoMark = ({ className = "w-10 h-10" }: { className?: string }) =>
 );
 
 interface NavbarProps {
-  onNavigate: (page: 'home' | 'brandpilot') => void;
+  onNavigate: (page: 'home' | 'brandpilot', section?: string) => void;
 }
 
 const Navbar: React.FC<NavbarProps> = ({ onNavigate }) => {
@@ -49,7 +49,12 @@ const Navbar: React.FC<NavbarProps> = ({ onNavigate }) => {
         </button>
         
         <div className="hidden md:flex space-x-12 items-center">
-          <button onClick={() => onNavigate('home')} className="text-[10px] uppercase tracking-[0.3em] hover:text-svara-gold transition-colors font-sans font-light text-svara-white/60">Our Brands</button>
+          <button 
+            onClick={() => onNavigate('home', 'ecosystem')} 
+            className="text-[10px] uppercase tracking-[0.3em] hover:text-svara-gold transition-colors font-sans font-light text-svara-white/60"
+          >
+            Our Brands
+          </button>
           <a href="#about" className="text-[10px] uppercase tracking-[0.3em] hover:text-svara-gold transition-colors font-sans font-light text-svara-white/60">Our Philosophy</a>
           <a href="#contact" className="text-[10px] uppercase tracking-[0.3em] hover:text-svara-gold transition-colors font-sans font-light text-svara-white/60">Contact</a>
           <a 
