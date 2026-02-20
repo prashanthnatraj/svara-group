@@ -55,14 +55,24 @@ const Navbar: React.FC<NavbarProps> = ({ onNavigate }) => {
           >
             Our Brands
           </button>
-          <a href="#about" className="text-[10px] uppercase tracking-[0.3em] hover:text-svara-gold transition-colors font-sans font-light text-svara-white/60">Our Philosophy</a>
-          <a href="#contact" className="text-[10px] uppercase tracking-[0.3em] hover:text-svara-gold transition-colors font-sans font-light text-svara-white/60">Contact</a>
-          <a 
-            href="#contact" 
+          <button 
+            onClick={() => onNavigate('home', 'about')}
+            className="text-[10px] uppercase tracking-[0.3em] hover:text-svara-gold transition-colors font-sans font-light text-svara-white/60"
+          >
+            Our Philosophy
+          </button>
+          <button 
+            onClick={() => onNavigate('home', 'contact')}
+            className="text-[10px] uppercase tracking-[0.3em] hover:text-svara-gold transition-colors font-sans font-light text-svara-white/60"
+          >
+            Contact
+          </button>
+          <button 
+            onClick={() => onNavigate('home', 'contact')} 
             className="px-6 py-2 border border-svara-gold text-svara-gold text-[10px] uppercase tracking-[0.3em] hover:bg-svara-gold hover:text-svara-black transition-all duration-300"
           >
             Partner With Us
-          </a>
+          </button>
         </div>
 
         <button className="md:hidden text-svara-gold p-2">
