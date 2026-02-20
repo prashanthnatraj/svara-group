@@ -49,15 +49,16 @@ const App: React.FC = () => {
     setCurrentPage(page);
     
     if (section) {
-      // Use a small timeout to ensure the DOM has rendered if we just switched back to home
+      // Increased timeout to ensure React has mounted the components
+      // especially when switching back from BrandPilot landing page
       setTimeout(() => {
         const el = document.getElementById(section);
         if (el) {
-          el.scrollIntoView({ behavior: 'smooth' });
+          el.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
-      }, 50);
+      }, 100);
     } else {
-      window.scrollTo(0, 0);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   };
 
