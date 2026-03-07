@@ -43,7 +43,7 @@ const Navbar: React.FC<NavbarProps> = ({ onNavigate }) => {
       <div className="container mx-auto px-6 md:px-12 flex justify-between items-center">
         <button onClick={() => onNavigate('home')} className="flex items-center gap-4 group">
           <LogoMark />
-          <span className="font-serif text-3xl tracking-[0.2em] text-svara-white group-hover:text-svara-gold transition-colors">
+          <span className="font-serif text-3xl tracking-[0.35em] text-svara-white group-hover:text-svara-gold transition-colors">
             SVARA.
           </span>
         </button>
