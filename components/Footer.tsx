@@ -13,7 +13,7 @@ const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
           <div className="space-y-6">
             <button onClick={() => onNavigate('home')} className="flex items-center gap-4 group text-left">
               <LogoMark className="w-12 h-12" />
-              <h2 className="font-serif text-3xl text-svara-white tracking-[0.2em] uppercase">SVARA.</h2>
+              <h2 className="font-serif text-3xl text-svara-white tracking-[0.35em] uppercase">SVARA.</h2>
             </button>
             <p className="text-[10px] uppercase tracking-[0.3em] text-svara-white/30 max-w-xs leading-loose font-medium">
               Empowering founders through AI-first velocity and precision craft.
